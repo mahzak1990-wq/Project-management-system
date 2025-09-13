@@ -1,0 +1,87 @@
+Projects Management UI (Primavera-style table)
+
+Table layout:
+
+Display all projects inside a table grid similar to Primavera.
+
+Columns should include at least: Project ID, Project Name, Start Date, End Date, Total Cost.
+
+Reduce the font size slightly so long project names can fit without truncation.
+
+Parent project categorization:
+
+Each project should belong to one of three parent categories:
+
+Sewerage Projects
+
+Water Projects
+
+Construction Projects
+
+These categories act as “parent nodes” that group related child projects under them.
+
+Parent nodes should display aggregated totals (e.g., total cost, total duration) from their child projects.
+
+Move project option:
+
+Add a small arrow icon/button on the right side of each project row.
+
+Clicking this should allow the user to move the project under a different parent category.
+
+Data Binding with Excel
+
+Currently, the table is not linked with the underlying data in the program. The following binding rules are required:
+
+Source of data:
+
+All project information (ID, Name, Start Date, End Date, Total Cost) should be imported from the Excel sheet.
+
+The Excel sheet will always contain structured columns such as:
+
+Project ID
+
+Project Name
+
+Start Date
+
+End Date
+
+Baseline Project Total Cost
+
+Mapping logic:
+
+Project ID in Excel → Project ID column in the table.
+
+Project Name in Excel → Project Name column in the table.
+
+Start Date and Finish Date in Excel → Start Date / End Date columns in the table.
+
+BL Project Total Cost in Excel → Total Cost column in the table.
+
+Dynamic updates:
+
+When a new Excel sheet is imported, the table should automatically refresh with the new data.
+
+Any modifications to projects (such as moving them under a different parent) should be preserved in the UI but also reflected when exporting back to Excel.
+
+Export function:
+
+After organizing or editing projects in the UI, users should be able to export the updated table back into an Excel sheet with the same structure.
+
+The exported sheet should maintain the parent-child relationships and updated project attributes.
+
+Example workflow
+
+User imports an Excel file with project data.
+
+The system automatically maps each column to the table fields.
+
+Projects appear under the “Uncategorized” parent by default.
+
+User can then move each project into Sewerage / Water / Construction using the arrow button.
+
+Totals update automatically at the parent level.
+
+User exports the updated table back to Excel with all changes applied.
+
+👉 This will make the UI functionally similar to Primavera, while ensuring data integrity is maintained via proper Excel binding (import/export).
